@@ -61,7 +61,7 @@ export default function PartnerCRMView({ bookings, onDispatchBooking, onAddBooki
       status: 'Awaiting Review',
       date: new Date().toLocaleDateString()
     };
-    onAddBooking(newLead);
+    onAddBooking(newLead, "Partner CRM Quick-Add");
     // Clear
     setGymName('');
     setOwnerName('');

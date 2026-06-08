@@ -81,9 +81,19 @@ export default function App() {
   };
 
   // Add booking from any forms
-  const handleAddBooking = (newBooking: any) => {
+  const handleAddBooking = async (newBooking: any, origin: string = "Direct Submission") => {
     const updated = [newBooking, ...bookings];
     saveBookings(updated);
+
+    try {
+      await fetch("/api/submit-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...newBooking, origin }),
+      });
+    } catch (error) {
+      console.error("Failed to notify backend:", error);
+    }
   };
 
   // Modal specific submit
@@ -108,8 +118,7 @@ export default function App() {
       date: new Date().toLocaleDateString()
     };
 
-    const updated = [newLead, ...bookings];
-    saveBookings(updated);
+    handleAddBooking(newLead, "Global Modal Form");
     setBookingSuccess(true);
   };
 

@@ -53,7 +53,7 @@ export default function HomeView({ navigate, onOpenBookingModal, onRequestTrialS
       location,
       memberCount,
       prioritizedCategories
-    });
+    }, "Homepage Trial Form");
     setSubmissionSuccess(true);
     // Clear form
     setGymName('');
