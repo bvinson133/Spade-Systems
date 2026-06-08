@@ -1,6 +1,5 @@
 import express from "express";
 import path from "path";
-import { fileURLToPath } from "url";
 import { createServer as createViteServer } from "vite";
 import * as dotenv from "dotenv";
 import nodemailer from "nodemailer";
@@ -9,12 +8,9 @@ import twilio from "twilio";
 // Initialize environment variables manually in dev and prod
 dotenv.config();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 async function startServer() {
   const app = express();
-  const PORT = process.env.PORT || 3000;
+  const PORT = 3000;
 
   // Middleware to parse JSON
   app.use(express.json());
