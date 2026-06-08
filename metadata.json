@@ -1,0 +1,6 @@
+{
+  "name": "Spade Systems",
+  "description": "Premium automated micro-market smart vending solutions for high-end fitness clubs and gyms in Walnut Creek and Contra Costa County.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

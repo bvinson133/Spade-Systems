@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-carbon: #0B0F19;
+  --color-brand-card: #141824;
+  --color-brand-slate: #1E293B;
+  --color-brand-mint: #10B981;
+  --color-brand-mint-glow: rgba(16, 185, 129, 0.15);
+  --color-brand-indigo: #6366F1;
+  --color-brand-gold: #CFAE70;
+  --color-brand-gold-hover: #BF9F60;
+  --color-brand-gold-glow: rgba(207, 174, 112, 0.2);
+  --color-brand-dark: #070A10;
+  --color-brand-gray: #9CA3AF;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Custom premium glow effects & grid overlays */
+.mesh-bg {
+  background-color: #0B0F19;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(207, 174, 112, 0.08) 0px, transparent 50%);
+}
+
+.grid-overlay {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+.gold-glow-btn {
+  box-shadow: 0 4px 20px rgba(207, 174, 112, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-glow-btn:hover {
+  box-shadow: 0 8px 30px rgba(207, 174, 112, 0.45);
+  transform: translateY(-2px);
+}
+
+.pulsing-dot {
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Simulated smart fridge graphic */
+.fridge-reflection {
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.04) 100%);
+}
+
+.neon-border-g {
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+}
+
+/* Custom fade effects */
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
